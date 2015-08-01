@@ -1,0 +1,42 @@
+
+(require 'package)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")))
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+
+
+(add-to-list 'load-path "~/.emacs.d/elpa/company-web-20150623.533")
+(add-to-list 'load-path "~/.emacs.d/elpa/dash-20150717.1321")
+(add-to-list 'load-path "~/.emacs.d/elpa/dash-functional-20150311.2358")
+(add-to-list 'load-path "~/.emacs.d/elpa/markdown-mode-20150727.855")
+(add-to-list 'load-path "~/.emacs.d/elpa/s-20140910.334")
+(add-to-list 'load-path "~/.emacs.d/elpa/tern-20150728.32")
+(add-to-list 'load-path "~/.emacs.d/elpa/web-completion-data-20150623.333")
+(add-to-list 'load-path "~/.emacs.d/elpa/web-mode-20150722.12")
+(add-to-list 'load-path "~/.emacs.d/elpa/company-tern-20150525.216")
+
+(add-to-list 'load-path "~/.emacs.d/elpa/company-20150727.1415")
+(require 'company)
+(add-to-list 'company-backends 'company-tern)
+(add-hook 'html-mode-hook 'company-mode)
+
+(add-to-list 'load-path "~/.emacs.d/elpa/sr-speedbar-20141004.532")
+(require 'sr-speedbar)
+(set-variable 'sr-speedbar-right-side nil)
+(set-variable 'sr-speedbar-auto-refresh t)
+(set-variable 'sr-speedbar-default-width 20)
+
+(add-to-list 'load-path "~/.emacs.d/elpa/emmet-mode-20150410.803")
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode) 
+(add-hook 'html-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook  'emmet-mode)
+(add-hook 'css-mode-hook  'company-mode)
+
+;; general
+(show-paren-mode 1)
+(setq-default indent-tabs-mode nil)
+(set-variable 'sgml-basic-offset 4)
+
+
